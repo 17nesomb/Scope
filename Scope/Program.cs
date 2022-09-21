@@ -8,17 +8,30 @@ namespace Scope
 {
     class Program
     {
+        static string language = "English";
+
         static void Main(string[] args)
         {
-            SayHello("English");
-            SayHello("German");
-            SayHello("French");
-            SayHello("HAOSIUh");
+            
+            ShowOff();
+        
+        }
 
+        private static void ShowOff()
+        {
+            List<string> languages = new List<string> {
+                "English","German","French","Yorkshire","Spanish"
+            };
+
+            foreach(string language in languages)
+            {
+                SayHello(language);
+            }
         }
 
         private static void SayHello(string language)
         {
+            Console.Write($"You can greet someone in {language} by saying ");
             switch(language)
             {
                 case "English":
@@ -29,6 +42,9 @@ namespace Scope
                     break;
                 case "French":
                     Console.WriteLine("Bonjour");
+                    break;
+                case "Spanish":
+                    Console.WriteLine("Hola");
                     break;
                 default:
                     Console.WriteLine("How do?!");
